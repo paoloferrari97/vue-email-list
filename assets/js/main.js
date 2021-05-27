@@ -7,11 +7,10 @@ const app = new Vue({
         emails: []
     },
     methods: {
-        
+
     },
     mounted() {
-
-        for (let i = 0; i < 10; i++) {
+        /* for (let i = 0; i < 10; i++) {
             axios
             .get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then(response => {
@@ -20,6 +19,24 @@ const app = new Vue({
                 const mail = response.data.response;
                 this.emails.push(mail);
             })
+        } */
+
+        //BONUS
+        let tempEmails = [];
+        for (let i = 0; i < 10; i++) {
+            axios
+            .get("https://flynn.boolean.careers/exercises/api/random/mail")
+            .then(response => {
+                //console.log(response);
+                //console.log(response.data.response);
+                const mail = response.data.response;
+                tempEmails.push(mail);
+                console.log(tempEmails);
+            })
         }
+        this.emails = tempEmails;
+        console.log(this.emails);
     }
 });
+
+//BONUS: Far comparire gli indirizzi email solamente quando sono stati tutti generati.
