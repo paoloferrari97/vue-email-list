@@ -31,11 +31,12 @@ const app = new Vue({
                 //console.log(response.data.response);
                 const mail = response.data.response;
                 tempEmails.push(mail);
-                console.log(tempEmails);
+                //console.log(tempEmails);
+                if(tempEmails.length > 9) {
+                    this.emails = tempEmails;
+                }
             })
         }
-        this.emails = tempEmails;
-        console.log(this.emails);
     }
 });
 
