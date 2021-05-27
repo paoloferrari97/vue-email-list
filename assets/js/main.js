@@ -37,6 +37,8 @@ const app = new Vue({
                 }
             })
         }
+        //oppure (al posto del controllo e di pushare gli elementi nell'array temoraneo e dopo tutti insieme in quello nei data)
+        //posso utilizzare su <ol> nell'html questo: v-if="emails.length == 10"
     }
 });
 
